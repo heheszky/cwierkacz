@@ -7,10 +7,12 @@ class Board extends BaseController {
 		if(!isset($this->data['user']))
 		{
 			$this->load->view('templates/header');
-			$this->load->view('join_us');
+			$this->load->view('board/home_notlogged');
 			$this->load->view('templates/footer');
 			return;
 		}
-		$this->load->view('welcome_message');
+		$this->load->view('templates/header', $this->data);
+		$this->load->view('board/home_logged');
+		$this->load->view('templates/footer');
 	}
 }

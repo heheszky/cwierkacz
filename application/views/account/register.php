@@ -1,0 +1,1 @@
+<?php include("/application/views/account/registerform.php"); ?>
