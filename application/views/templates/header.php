@@ -21,10 +21,18 @@
 					Ćwierkacz
 					</a>
 				</div>
-				<ul class="nav navbar-nav">
-					<?php if(isset($user)): ?>
-					<li><a href="/wyloguj">Wyloguj się</a></li>
-					<?php endif; ?>
-				</ul>
+				<div class='container'>
+					<form class="navbar-form navbar-left" role="search">
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Szukaj profilu">
+						</div>
+						<button type="submit" class="btn btn-default">Szukaj</button>
+					</form>
+					<ul class="nav navbar-nav navbar-right">
+						<?php if(isset($user)): ?>
+						<li><a href="/wyloguj">Wyloguj się</a></li>
+						<?php endif; ?>
+					</ul>
+				</div>
 			</div>
 			</nav>
