@@ -11,8 +11,8 @@
 		</div>
 	</div>
 	<div class='col-md-7'>		
-		<form method='post' class='row cwierknij'>
-			<textarea placeholder='Napisz co teraz myślisz...' class='form-control cwierknij-textarea'></textarea>
+		<form action='/dodaj' method='post' class='row cwierknij'>
+			<textarea name='content' placeholder='Napisz co teraz myślisz...' class='form-control cwierknij-textarea'></textarea>
 			<input type='submit' value='Ćwierknij' class="btn btn-primary cwierknij-btn">
 			<div class='clear'></div>
 		</form>
@@ -24,12 +24,13 @@
 		<div class='row board'>
 			<?php foreach($posts as $post): ?>
 			<div class="panel panel-default cwierknij-cwierk">
-				<div class="panel-heading kto"><?=$post->first_name.' '.$post->last_name?><small class="text-primary data" data-livestamp="<?=$post->timestamp?>"></small></div>
+				<div class="panel-heading kto"><?=$post->first_name.' '.$post->last_name?><a href='/cwierk/<?=$post->post_id?>'><small class="text-primary data" data-livestamp="<?=$post->timestamp?>"></small></a></div>
 				<div class="panel-body tresc">
 					<?=$post->content?>
 				</div>
 			</div>
 			<?php endforeach; ?>
+			<a href="/strona/2" class="btn btn-primary" style="width: 100%;">Następna strona</a>
 		</div>
 		<script>
 			var posts = document.getElementsByClassName("cwierknij-cwierk");

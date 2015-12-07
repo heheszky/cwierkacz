@@ -26,4 +26,11 @@ class Board extends BaseController {
 		$this->load->view('board/home_logged', $this->body_data);
 		$this->load->view('templates/footer');
 	}
+
+	public function add_post()
+	{
+		if(!isset($this->data['user'])) return 0;
+		$this->posts->add($this->data['user']['id']);
+		redirect('/');
+	}
 }

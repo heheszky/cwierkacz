@@ -1,9 +1,9 @@
 <?php
 class Posts extends CI_Model {
-	function add()
+	function add($author)
 	{
 		$data = array(
-			"author"		=> $this->input->post('author'),
+			"author"		=> $author,
 			"content"		=> $this->input->post('content'),
 			);
 		$this->db->insert('posts', $data);
@@ -23,6 +23,7 @@ class Posts extends CI_Model {
 	{
 		$this->db->select('posts.id as post_id, accounts.id as author_id, content, timestamp, first_name, last_name');
 		$this->db->where('accounts.id=posts.author');
+		$this->db->order_by('timestamp', 'desc');
 		return $this->db->get(array('posts', 'accounts'), 30, ($page-1)*30)->result();
 	}
 

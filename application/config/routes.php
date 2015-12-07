@@ -49,6 +49,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
+$route['dodaj'] = 'board/add_post';
 $route['(:num)'] = 'board/index/$1';
 $route['cwierk/(:num)'] = 'board/post/$1';
 $route['rejestracja'] = 'account/register';
