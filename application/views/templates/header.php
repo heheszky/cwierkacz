@@ -23,12 +23,12 @@
 						</a>
 					</div>
 					
-					<form class="navbar-form navbar-left" role="search">
+					<div class="navbar-form navbar-left" role="search">
 						<div class="form-group">
-							<input type="text" class="form-control" placeholder="Szukaj profilu">
+							<input onkeypress="var code = (event.keyCode ? event.keyCode : event.which);if(code==13)document.getElementsByTagName('button')[0].click()" type="text" class="form-control" placeholder="Szukaj profilu" id="szukajka">
 						</div>
-						<button type="submit" class="btn btn-default">Szukaj</button>
-					</form>
+						<button onclick='location.href="/szukaj/"+document.getElementById("szukajka").value;' class="btn btn-default">Szukaj</button>
+					</div>
 					<ul class="nav navbar-nav navbar-right">
 						<?php if(isset($user)): ?>
 						<li><a href="/wyloguj">Wyloguj się</a></li>

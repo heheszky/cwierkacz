@@ -70,6 +70,31 @@ class Account extends BaseController {
 		$this->session->unset_userdata('logged_in');
 		redirect("/");
 	}
+
+	public function search($term)
+	{
+		if(!$term) redirect("/");
+		$this->body_data = array();
+		$term = urldecode($term);
+		$this->body_data['search_result'] = $this->acc->search($term, $this->data['user']['id']);
+		$this->load->view('templates/header', $this->data);
+		$this->load->view('account/search', $this->body_data);
+		$this->load->view('templates/footer');
+	}
+
+	public function follow($id)
+	{
+		$this->load->model("follow");
+		$this->follow->add($this->data['user']['id'], $id);
+		redirect("/");
+	}
+	public function unfollow($id)
+	{
+		$this->load->model("follow");
+		$this->follow->remove($this->data['user']['id'], $id);
+		redirect("/");
+	}
+
 	function check_database($password)
 	{
 		$mail = $this->input->post('email');

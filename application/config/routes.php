@@ -49,9 +49,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
+$route['unfollow/(:num)'] = 'account/unfollow/$1';
+$route['follow/(:num)'] = 'account/follow/$1';
+$route['szukaj'] = 'account/search';
+$route['szukaj/(:any)'] = 'account/search/$1';
 $route['dodaj'] = 'board/add_post';
 $route['(:num)'] = 'board/index/$1';
-$route['cwierk/(:num)'] = 'board/post/$1';
+$route['u/(:num)'] = 'board/index/$1/user';
+$route['cwierk/(:num)'] = 'board/index/$1/post';
 $route['rejestracja'] = 'account/register';
 $route['logowanie'] = 'account/login';
 $route['wyloguj'] = 'account/logout';

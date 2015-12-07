@@ -22,15 +22,20 @@
 		<?php endif; ?>
 		
 		<div class='row board'>
+			<?php if(!count($posts)): ?>
+				Niestety brak postów do wyświetlenia
+			<?php endif; ?>
 			<?php foreach($posts as $post): ?>
 			<div class="panel panel-default cwierknij-cwierk">
-				<div class="panel-heading kto"><?=$post->first_name.' '.$post->last_name?><a href='/cwierk/<?=$post->post_id?>'><small class="text-primary data" data-livestamp="<?=$post->timestamp?>"></small></a></div>
+				<div class="panel-heading kto"><a href="/u/<?=$post->author_id?>"><?=$post->first_name.' '.$post->last_name?></a><a href='/cwierk/<?=$post->post_id?>'><small class="text-primary data" data-livestamp="<?=$post->timestamp?>"></small></a></div>
 				<div class="panel-body tresc">
 					<?=$post->content?>
 				</div>
 			</div>
 			<?php endforeach; ?>
-			<a href="/strona/2" class="btn btn-primary" style="width: 100%;">Następna strona</a>
+			<?php if(count($posts) >= 20): ?>
+			<a href="/<?=++$page?>" class="btn btn-primary" style="width: 100%;">Następna strona</a>
+			<?php endif; ?>
 		</div>
 		<script>
 			var posts = document.getElementsByClassName("cwierknij-cwierk");

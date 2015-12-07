@@ -28,4 +28,17 @@ class Acc extends CI_Model {
 	{
 		return $this->db->count_all_results();
 	}
+
+	function search($term, $userid)
+	{
+		return $this->db->query("
+			SELECT accounts.id, first_name, last_name, email, (SELECT COUNT(*) FROM follows WHERE followed=accounts.id AND follower=".$userid.") as following
+			FROM accounts
+			WHERE (CONCAT(first_name, \" \", last_name) LIKE \"%".$term."%\"
+				OR CONCAT(first_name, \" \", last_name, \" \", email) LIKE \"%".$term."%\"
+				OR CONCAT(last_name, \" \", first_name) LIKE \"%".$term."%\"
+				OR email LIKE \"%".$term."%\")
+				AND id <> ".$userid.";
+		")->result();
+	}
 }
