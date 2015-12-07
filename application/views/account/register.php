@@ -1,1 +1,3 @@
-<?php include("/application/views/account/registerform.php"); ?>
+<?php
+	include(FCPATH . "application/views/account/registerform.php");
+?>

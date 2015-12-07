@@ -23,4 +23,9 @@ class Acc extends CI_Model {
 		));
 		return $this->db->get('accounts')->row();
 	}
+
+	function get_count()
+	{
+		return $this->db->count_all_results();
+	}
 }

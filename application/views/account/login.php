@@ -1,1 +1,1 @@
-<?php include("/application/views/account/loginform.php"); ?>
+<?php include( FCPATH . "application/views/account/loginform.php"); ?>

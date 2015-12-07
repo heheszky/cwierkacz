@@ -22,26 +22,14 @@
 		<?php endif; ?>
 		
 		<div class='row board'>
+			<?php foreach($posts as $post): ?>
 			<div class="panel panel-default cwierknij-cwierk">
-				<div class="panel-heading kto">Damian Plewa <small class="text-primary data" data-livestamp="1449506424"></small></div>
+				<div class="panel-heading kto"><?=$post->first_name.' '.$post->last_name?><small class="text-primary data" data-livestamp="<?=$post->timestamp?>"></small></div>
 				<div class="panel-body tresc">
-					Lmao #bieda #innytag
+					<?=$post->content?>
 				</div>
 			</div>
-			
-			<div class="panel panel-default cwierknij-cwierk">
-				<div class="panel-heading kto">Damian Plewa <small class="text-primary data" data-livestamp="1449506424"></small></div>
-				<div class="panel-body tresc">
-					Lmao #bieda #heheszki
-				</div>
-			</div>
-			
-			<div class="panel panel-default cwierknij-cwierk">
-				<div class="panel-heading kto">Damian Plewa <small class="text-primary data" data-livestamp="1449506424"></small></div>
-				<div class="panel-body tresc">
-					Lmao #bieda #lmao
-				</div>
-			</div>
+			<?php endforeach; ?>
 		</div>
 		<script>
 			var posts = document.getElementsByClassName("cwierknij-cwierk");
