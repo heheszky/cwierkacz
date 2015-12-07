@@ -28,20 +28,19 @@
 					Lmao #bieda #innytag
 				</div>
 			</div>
-			
 			<div class="panel panel-default cwierknij-cwierk">
 				<div class="panel-heading kto">Damian Plewa <small class="text-primary data" data-livestamp="1449506424"></small></div>
 				<div class="panel-body tresc">
 					Lmao #bieda #heheszki
 				</div>
 			</div>
-			
 			<div class="panel panel-default cwierknij-cwierk">
 				<div class="panel-heading kto">Damian Plewa <small class="text-primary data" data-livestamp="1449506424"></small></div>
 				<div class="panel-body tresc">
 					Lmao #bieda #lmao
 				</div>
 			</div>
+			<a href="/strona/2" class="btn btn-primary" style="width: 100%;">Następna strona</a>
 		</div>
 		<script>
 			var posts = document.getElementsByClassName("cwierknij-cwierk");
