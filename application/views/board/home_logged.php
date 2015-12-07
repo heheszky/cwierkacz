@@ -25,23 +25,29 @@
 			<div class="panel panel-default cwierknij-cwierk">
 				<div class="panel-heading kto">Damian Plewa <small class="text-primary data" data-livestamp="1449506424"></small></div>
 				<div class="panel-body tresc">
-					Lmao <a href='/tag/bieda/'>#bieda</a>
+					Lmao #bieda #innytag
 				</div>
 			</div>
 			
 			<div class="panel panel-default cwierknij-cwierk">
 				<div class="panel-heading kto">Damian Plewa <small class="text-primary data" data-livestamp="1449506424"></small></div>
 				<div class="panel-body tresc">
-					Lmao <a href='/tag/bieda/'>#bieda</a>
+					Lmao #bieda #heheszki
 				</div>
 			</div>
 			
 			<div class="panel panel-default cwierknij-cwierk">
 				<div class="panel-heading kto">Damian Plewa <small class="text-primary data" data-livestamp="1449506424"></small></div>
 				<div class="panel-body tresc">
-					Lmao <a href='/tag/bieda/'>#bieda</a>
+					Lmao #bieda #lmao
 				</div>
 			</div>
 		</div>
+		<script>
+			var posts = document.getElementsByClassName("cwierknij-cwierk");
+			for(var x = 0; x < posts.length; x++){
+				posts[x].children[1].innerHTML = posts[x].children[1].innerText.replace(/#(.+?)(?=[\s.,:,]|$)/g, function(x){return "<a href='/tag/"+x.substr(1)+"'>"+x+"</a>";});
+			}
+		</script>
 	</div>
 </div>

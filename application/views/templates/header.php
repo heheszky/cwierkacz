@@ -15,13 +15,14 @@
 	</head>
 	<body>
 		<nav class="navbar navbar-default">
-			<div class="container-fluid">
-				<div class="navbar-header">
-					<a class="navbar-brand" href="/">
-					Ćwierkacz
-					</a>
-				</div>
-				<div class='container'>
+			<div class='container'>
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<a class="navbar-brand" href="/">
+						Ćwierkacz
+						</a>
+					</div>
+					
 					<form class="navbar-form navbar-left" role="search">
 						<div class="form-group">
 							<input type="text" class="form-control" placeholder="Szukaj profilu">
@@ -33,6 +34,7 @@
 						<li><a href="/wyloguj">Wyloguj się</a></li>
 						<?php endif; ?>
 					</ul>
+					
 				</div>
 			</div>
 			</nav>
