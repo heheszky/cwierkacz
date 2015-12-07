@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 require "BaseController.php";
 class Board extends BaseController {
-	public function index($page = 1, $type = null)
+	public function index($i = 1, $type = null)
 	{
 		if(!isset($this->data['user']))
 		{
@@ -15,16 +15,20 @@ class Board extends BaseController {
 		switch($type)
 		{
 			case "post":
-				$this->body_data['posts'] = $this->posts->get_post($page);
+				$this->body_data['posts'] = $this->posts->get_post($i);
 				break;
 			case "user":
-				$this->body_data['posts'] = $this->posts->get_user_posts($page);
+				$this->body_data['posts'] = $this->posts->get_user_posts($i);
+				break;
+			case "tag":
+				$this->body_data['posts'] = $this->posts->get_by_tag($i);
+				$this->body_data['TAG'] = $i;
 				break;
 			default:
-				$this->body_data['posts'] = $this->posts->get_page_posts($page, $this->data['user']['id']);
+				$this->body_data['posts'] = $this->posts->get_page_posts($i, $this->data['user']['id']);
+				$this->body_data['page'] = $i;
 				break;
 		}
-		$this->body_data['page'] = $page;
 		$this->load->view('templates/header', $this->data);
 		$this->load->view('board/home_logged', $this->body_data);
 		$this->load->view('templates/footer');

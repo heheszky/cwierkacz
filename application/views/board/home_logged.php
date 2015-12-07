@@ -33,7 +33,7 @@
 				</div>
 			</div>
 			<?php endforeach; ?>
-			<?php if(count($posts) >= 20): ?>
+			<?php if(isset($page)&&count($posts) >= 20): ?>
 			<a href="/<?=++$page?>" class="btn btn-primary" style="width: 100%;">Następna strona</a>
 			<?php endif; ?>
 		</div>

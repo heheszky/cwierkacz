@@ -10,12 +10,23 @@ class Posts extends CI_Model {
 		return $this->db->query("SELECT * FROM posts WHERE id=".$this->db->insert_id())->row();
 	}
 
+	function get_by_tag($tag)
+	{
+		$this->db->select('posts.id as post_id, accounts.id as author_id, content, timestamp, first_name, last_name');
+		$this->db->from(array('posts', 'accounts'));
+		$this->db->where('accounts.id=posts.author');
+		$this->db->where('content LIKE "%'.$tag.'%"');
+		$this->db->order_by('timestamp', 'desc');
+		return $this->db->get()->result();
+	}
+
 	function get_post($id)
 	{
 		$this->db->select('posts.id as post_id, accounts.id as author_id, content, timestamp, first_name, last_name');
 		$this->db->from(array('posts', 'accounts'));
 		$this->db->where('posts.id', $id);
 		$this->db->where('accounts.id=posts.author');
+		$this->db->order_by('timestamp', 'desc');
 		return $this->db->get()->result();
 	}
 
@@ -25,6 +36,7 @@ class Posts extends CI_Model {
 		$this->db->from(array('posts', 'accounts'));
 		$this->db->where('author', $id);
 		$this->db->where('accounts.id=posts.author');
+		$this->db->order_by('timestamp', 'desc');
 		return $this->db->get()->result();
 	}
 
