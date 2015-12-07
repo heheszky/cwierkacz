@@ -53,11 +53,11 @@ class Account extends BaseController {
 			$this->load->model('acc');
 			$result = $this->acc->add();
 			$sess_array = array(
-				'id' => $result['id'],
+				'id' => $result->id,
 				'admin' => 0,
-				'imie' => $result['first_name'],
-				'nazwisko' => $result['last_name'],
-				'email' => $result['email']
+				'imie' => $result->first_name,
+				'nazwisko' => $result->last_name,
+				'email' => $result->email
 			);
 			$this->session->set_userdata('logged_in', $sess_array);
 			redirect('/');

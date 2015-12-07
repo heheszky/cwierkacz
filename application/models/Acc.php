@@ -7,7 +7,8 @@ class Acc extends CI_Model {
 			"password"		=> md5($this->input->post('password')),
 			"first_name"	=> $this->input->post('fname'),
 			"last_name"		=> $this->input->post('lname'),
-			"birth_date"	=> $this->input->post('bdate')
+			"birth_date"	=> $this->input->post('bdate'),
+			"create_date"	=> date("Y-m-d")
 			);
 		$this->db->insert('accounts', $data);
 		return $this->db->query("SELECT id, first_name, last_name, email FROM accounts WHERE id=".$this->db->insert_id())->row();
