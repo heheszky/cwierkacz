@@ -17,25 +17,29 @@
 			<div class='clear'></div>
 		</form>
 		
+		<?php if(@$TAG): ?>
+			<h2>Posty z tagiem <?= @$TAG ?></h2>
+		<?php endif; ?>
+		
 		<div class='row board'>
 			<div class="panel panel-default cwierknij-cwierk">
 				<div class="panel-heading kto">Damian Plewa <small class="text-primary data" data-livestamp="1449506424"></small></div>
 				<div class="panel-body tresc">
-					Lmao #bieda
+					Lmao <a href='/tag/bieda/'>#bieda</a>
 				</div>
 			</div>
 			
 			<div class="panel panel-default cwierknij-cwierk">
 				<div class="panel-heading kto">Damian Plewa <small class="text-primary data" data-livestamp="1449506424"></small></div>
 				<div class="panel-body tresc">
-					Lmao #bieda
+					Lmao <a href='/tag/bieda/'>#bieda</a>
 				</div>
 			</div>
 			
 			<div class="panel panel-default cwierknij-cwierk">
 				<div class="panel-heading kto">Damian Plewa <small class="text-primary data" data-livestamp="1449506424"></small></div>
 				<div class="panel-body tresc">
-					Lmao #bieda
+					Lmao <a href='/tag/bieda/'>#bieda</a>
 				</div>
 			</div>
 		</div>
