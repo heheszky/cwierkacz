@@ -4,7 +4,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="/assets/css/bootstrap.min.css">
-		<link rel="stylesheet" href="/assets/css/bootstrap-theme.min.css">
+		<!--<link rel="stylesheet" href="/assets/css/bootstrap-theme.min.css">-->
 		<link rel="stylesheet" href="/assets/css/main.css">
 		<title>Ćwierkacz</title>
 	</head>
@@ -16,8 +16,10 @@
 					Ćwierkacz
 					</a>
 				</div>
+				<ul class="nav navbar-nav">
+					<?php if(isset($user)): ?>
+					<li><a href="/wyloguj">Wyloguj się</a></li>
+					<?php endif; ?>
+				</ul>
 			</div>
 			</nav>
-			<?php if(isset($user)): ?>
-				Witaj <?= $user['imie'] ?>
-			<?php endif; ?>

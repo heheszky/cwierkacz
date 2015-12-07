@@ -1,1 +1,5 @@
 html,body{background:#ECECEC !important;}
+.cwierknij{padding-bottom:10px;margin-bottom:10px;}
+.cwierknij-textarea{margin-bottom:5px;}
+.cwierknij-btn{float:right;}
+.clear{clear:both;}
