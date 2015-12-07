@@ -30,6 +30,7 @@ class Account extends BaseController {
 			)
 		);
 		$this->form_validation->set_rules($validation_config);
+		$this->form_validation->set_error_delimiters('<span class="error">', '</span>');
 		if($this->form_validation->run() == FALSE)
 		{
 			$this->load->view('templates/header', $this->data);
@@ -44,6 +45,7 @@ class Account extends BaseController {
 		$this->load->helper(array('validation', 'form'));
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules(get_register_validation_config());
+		$this->form_validation->set_error_delimiters('<span class="error">', '</span>');
 		if($this->form_validation->run() == FALSE)
 		{
 			$this->load->view('templates/header', $this->data);
